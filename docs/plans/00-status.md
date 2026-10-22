@@ -35,15 +35,12 @@ Counted from the register itself. A register with no rows still gets a line.
 |---|---|---|---|---|
 | Decisions (`D`) | 3 | 1 | 0 | 2 |
 | Risks (`RR`) | 4 | 4 | 0 | 0 |
-| Owner items (`O`) | 5 | 5 | 0 | 0 |
-| Agent items (`A`) | 2 | 2 | 0 | 0 |
-| Hooks (`H`) | 8 | 8 | 0 | 0 |
-| Mutations (`M`) | 4 | 4 | 0 | 0 |
+| Owner items (`O`) | 6 | 6 | 0 | 0 |
+| Agent items (`A`) | 3 | 3 | 0 | 0 |
+| Hooks (`H`) | 8 | 3 | 0 | 5 |
+| Mutations (`M`) | 4 | 1 | 0 | 3 |
 | Chores (`C`) | 2 | 2 | 0 | 0 |
-| Gates (`G`) | 1 | 0 | 1 | 0 |
-
-`Unknown` is not a third kind of open. It means the source document said nothing about status, so the page will not guess — the row is a question for the owner (`RR37`).
-
+| Gates (`G`) | 1 | 0 | 0 | 1 |
 
 ### By status
 
@@ -52,24 +49,26 @@ Counted from the register itself. A register with no rows still gets a line.
 | `D` | proposed | 1 |
 | `D` | ratified | 2 |
 | `RR` | open | 4 |
-| `O` | open | 5 |
-| `A` | open | 2 |
-| `H` | proposed | 8 |
-| `M` | proposed | 4 |
+| `O` | open | 6 |
+| `A` | open | 3 |
+| `H` | built | 5 |
+| `H` | proposed | 3 |
+| `M` | killed | 3 |
+| `M` | proposed | 1 |
 | `C` | open | 2 |
-| `G` | unknown | 1 |
+| `G` | done | 1 |
 
 ## Hooks
 
-**0 of 8 built.** Prose is advisory; hooks are not. A hook's status is what the register says — this page does not go looking in `scripts/` for a file and infer that the hook works, because a file existing is not evidence that it ever failed.
+**5 of 8 built.** Prose is advisory; hooks are not. A hook's status is what the register says — this page does not go looking in `scripts/` for a file and infer that the hook works, because a file existing is not evidence that it ever failed.
 
 | ID | Hook | Surface | Protects | Status |
 |---|---|---|---|---|
-| H1 | Status page regenerates clean | pre-commit + CI | the page cannot go stale | proposed |
-| H2 | No register ID in a commit subject; conventional format | commit-msg | the two-tier grammar | proposed |
-| H3 | Every staged file carries a current Created/Edited stamp | pre-commit | time spent, visible | proposed |
-| H4 | Test count may not fall below tests/TESTFLOOR | pre-commit + CI | a shrinking suite is blind | proposed |
-| H5 | Store suite runs against SQLite and Postgres (FR67) | CI | parity | proposed |
+| H1 | Status page regenerates clean | pre-commit; CI when `UPSTREAM_TOKEN` exists | the page cannot go stale | built |
+| H2 | No register ID in a commit subject; conventional format | commit-msg | the two-tier grammar | built |
+| H3 | Every staged file carries a current Created/Edited stamp | pre-commit | time spent, visible | built |
+| H4 | Test count may not fall below tests/TESTFLOOR | pre-commit + CI | a shrinking suite is blind | built |
+| H5 | Store suite runs against SQLite and Postgres (FR67) | CI | parity | built |
 | H6 | Every FR is cited by a test; every test cites an FR or D | CI | drift, both directions | proposed |
 | H7 | No hard-coded user-facing string (FR61) | CI | the translation layer | proposed |
 | H8 | Dependency license scan (NFR10) | CI | licensing | proposed |
@@ -82,7 +81,7 @@ Every open row in the register. Owner is the row's Owner column where the table 
 |---|---|---|---|---|
 | agent | C1 | P0 | open | Repository scaffold and harness |
 | agent | C2 | P0 | open | Technical trial: visibility engine with redacted editing, screen-reader editing on Android and iOS, memory and page spee… |
-| agent | RR2 | — | open | A standalone clone cannot regenerate 00-status.md because the generator lives in the upstream clone |
+| agent | RR2 | — | open | A standalone clone, and CI without UPSTREAMTOKEN, cannot run the status, citation, register and stamp checks because the… |
 | agent | RR3 | — | open | A gate said aloud and never written down, the upstream's signature failure |
 | agent | RR4 | — | open | Claims about outside systems ratified before anything ran: Discord guilds.join (FR6), Raid-Helper reads (FR42), Bun dial… |
 | owner | D2 | — | proposed | The stack named in the spec's ## Stack is confirmed by a run. Bun over database/sql with the pure-Go SQLite driver and P… |
@@ -90,24 +89,17 @@ Every open row in the register. Owner is the row's Owner column where the table 
 | owner | O2 | P1 | open | Android device with TalkBack and iOS device with VoiceOver for NFR5, needed at C2 |
 | owner | O3 | P1 | open | Choose and rent the 1 GB VPS for C2 |
 | owner | O4 | P2 | open | Create martin-gleason/loomhall-themes when the first theme exists |
-| owner | O5 | P1 | open | Write internal/version/version.go (C1-T3) once its test is handed over |
+| owner | O5 | P1 | open | Write internal/version/version.go (C1-T3); its test is on disk and red |
+| owner | O6 | P2 | open | Add a repository secret UPSTREAMTOKEN that can read martin-gleason/code-process-review, so CI runs the register checks; … |
 | owner | RR1 | — | open | The pure-Go SQLite driver or the Bun layer is too slow for a large guild |
 | unassigned | A1 | P2 | open | Upstream genstatus.py reads the vision from docs/specs/SPEC.md by name, while conventions.md says the directory is the r… |
 | unassigned | A2 | P2 | open | Upstream checkcitations.py sees an FR/NFR definition only when bold or at a bullet start, so a table-cell ID is invisibl… |
-| unassigned | G1 | — | unknown | C1 build |
-| unassigned | H1 | — | proposed | Status page regenerates clean |
-| unassigned | H2 | — | proposed | No register ID in a commit subject; conventional format |
-| unassigned | H3 | — | proposed | Every staged file carries a current Created/Edited stamp |
-| unassigned | H4 | — | proposed | Test count may not fall below tests/TESTFLOOR |
-| unassigned | H5 | — | proposed | Store suite runs against SQLite and Postgres (FR67) |
+| unassigned | A3 | P2 | open | Upstream checkregister.py accepts killed/survived as mutation statuses while conventions.md (D73) says run/escaped; this… |
 | unassigned | H6 | — | proposed | Every FR is cited by a test; every test cites an FR or D |
 | unassigned | H7 | — | proposed | No hard-coded user-facing string (FR61) |
 | unassigned | H8 | — | proposed | Dependency license scan (NFR10) |
 | unassigned | M1 | — | proposed | String() returns an empty string |
-| unassigned | M2 | — | proposed | its only test is skipped, suite exits clean |
-| unassigned | M3 | — | proposed | fix(D1): … |
-| unassigned | M4 | — | proposed | edited by hand |
 
 ---
 
-27 open register rows.
+20 open register rows.
