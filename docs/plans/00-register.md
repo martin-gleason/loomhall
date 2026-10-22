@@ -1,6 +1,6 @@
 # Register — loomhall
 
-Created: 2026-10-22 11:15 -05:00 · Edited: 2026-10-22 14:40 -05:00
+Created: 2026-10-22 11:15 -05:00 · Edited: 2026-10-22 14:41 -05:00
 
 Every register for this project, one `##` per register. This is the
 "where are we" read.
@@ -76,7 +76,7 @@ days on the owner's track.
 
 | ID | Chore | P | Status | Owner | Plan |
 |---|---|---|---|---|---|
-| C1 | Repository scaffold and harness | P0 | open | agent | `docs/plans/C1.md` |
+| C1 | Repository scaffold and harness | P0 | done, merged 2026-10-22 in PR #1 | agent | `docs/plans/C1.md` |
 | C2 | Technical trial: visibility engine with redacted editing, screen-reader editing on Android and iOS, memory and page speed on the `NFR1` server | P0 | open | agent | written at the gate |
 
 
