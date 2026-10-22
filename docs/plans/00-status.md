@@ -25,7 +25,7 @@ Status is what the unit's own plan header declares. What has landed in git is de
 
 | ID | Kind | Status | Milestone | P | Owner | Plan | Tasks |
 |---|---|---|---|---|---|---|---|
-| C1 | chore | built 2026-10-22, PR #1 awaiting owner review and merge | v1 | P0 | agent | `docs/plans/C1.md` | 8 planned |
+| C1 | chore | done, merged 2026-10-22 in PR #1 by rebase | v1 | P0 | agent | `docs/plans/C1.md` | 8 planned |
 
 ## Registers
 
@@ -39,7 +39,7 @@ Counted from the register itself. A register with no rows still gets a line.
 | Agent items (`A`) | 3 | 3 | 0 | 0 |
 | Hooks (`H`) | 8 | 3 | 0 | 5 |
 | Mutations (`M`) | 4 | 0 | 0 | 4 |
-| Chores (`C`) | 2 | 2 | 0 | 0 |
+| Chores (`C`) | 2 | 1 | 0 | 1 |
 | Gates (`G`) | 1 | 0 | 0 | 1 |
 
 ### By status
@@ -54,7 +54,8 @@ Counted from the register itself. A register with no rows still gets a line.
 | `H` | built | 5 |
 | `H` | proposed | 3 |
 | `M` | killed | 4 |
-| `C` | open | 2 |
+| `C` | done | 1 |
+| `C` | open | 1 |
 | `G` | done | 1 |
 
 ## Hooks
@@ -78,7 +79,6 @@ Every open row in the register. Owner is the row's Owner column where the table 
 
 | Owner | ID | P | Status | Item |
 |---|---|---|---|---|
-| agent | C1 | P0 | open | Repository scaffold and harness |
 | agent | C2 | P0 | open | Technical trial: visibility engine with redacted editing, screen-reader editing on Android and iOS, memory and page spee… |
 | agent | RR2 | — | open | A standalone clone, and CI without UPSTREAMTOKEN, cannot run the status, citation, register and stamp checks because the… |
 | agent | RR3 | — | open | A gate said aloud and never written down, the upstream's signature failure |
@@ -99,4 +99,4 @@ Every open row in the register. Owner is the row's Owner column where the table 
 
 ---
 
-18 open register rows.
+17 open register rows.
