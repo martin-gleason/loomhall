@@ -1,6 +1,6 @@
 # Register — loomhall
 
-Created: 2026-10-22 11:15 -05:00 · Edited: 2026-10-22 11:13 -05:00
+Created: 2026-10-22 11:15 -05:00 · Edited: 2026-10-22 11:17 -05:00
 
 Every register for this project, one `##` per register. This is the
 "where are we" read.
@@ -85,7 +85,7 @@ already built.
 
 | ID | Gate | Status | Plan written | Crossed | What the owner said |
 |---|---|---|---|---|---|
-| G1 | `C1` build | open | 2026-10-22 | — | "ratify it and open C1" (2026-10-22) ratified the spec and opened the chore; the yes to build `C1-T2` onward is pending |
+| G1 | `C1` build | crossed | 2026-10-22 | 2026-10-22 | "begin c1" — after "ratify it and open C1" had ratified the spec and opened the chore the same day |
 
 
 ## Hooks (H)

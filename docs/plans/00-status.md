@@ -25,7 +25,7 @@ Status is what the unit's own plan header declares. What has landed in git is de
 
 | ID | Kind | Status | Milestone | P | Owner | Plan | Tasks |
 |---|---|---|---|---|---|---|---|
-| C1 | chore | open, awaiting the gate to build (`G1`) | v1 | P0 | agent | `docs/plans/C1.md` | 8 planned |
+| C1 | chore | building, gate `G1` crossed 2026-10-22 | v1 | P0 | agent | `docs/plans/C1.md` | 8 planned |
 
 ## Registers
 
@@ -40,7 +40,10 @@ Counted from the register itself. A register with no rows still gets a line.
 | Hooks (`H`) | 8 | 8 | 0 | 0 |
 | Mutations (`M`) | 4 | 4 | 0 | 0 |
 | Chores (`C`) | 2 | 2 | 0 | 0 |
-| Gates (`G`) | 1 | 1 | 0 | 0 |
+| Gates (`G`) | 1 | 0 | 1 | 0 |
+
+`Unknown` is not a third kind of open. It means the source document said nothing about status, so the page will not guess — the row is a question for the owner (`RR37`).
+
 
 ### By status
 
@@ -54,7 +57,7 @@ Counted from the register itself. A register with no rows still gets a line.
 | `H` | proposed | 8 |
 | `M` | proposed | 4 |
 | `C` | open | 2 |
-| `G` | open | 1 |
+| `G` | unknown | 1 |
 
 ## Hooks
 
@@ -91,7 +94,7 @@ Every open row in the register. Owner is the row's Owner column where the table 
 | owner | RR1 | — | open | The pure-Go SQLite driver or the Bun layer is too slow for a large guild |
 | unassigned | A1 | P2 | open | Upstream genstatus.py reads the vision from docs/specs/SPEC.md by name, while conventions.md says the directory is the r… |
 | unassigned | A2 | P2 | open | Upstream checkcitations.py sees an FR/NFR definition only when bold or at a bullet start, so a table-cell ID is invisibl… |
-| unassigned | G1 | — | open | C1 build |
+| unassigned | G1 | — | unknown | C1 build |
 | unassigned | H1 | — | proposed | Status page regenerates clean |
 | unassigned | H2 | — | proposed | No register ID in a commit subject; conventional format |
 | unassigned | H3 | — | proposed | Every staged file carries a current Created/Edited stamp |
