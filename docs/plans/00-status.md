@@ -49,13 +49,14 @@ Counted from the register itself. A register with no rows still gets a line.
 | `D` | ratified | 4 |
 | `RR` | open | 5 |
 | `O` | closed | 1 |
-| `O` | open | 5 |
+| `O` | held | 1 |
+| `O` | open | 4 |
 | `A` | open | 3 |
 | `H` | built | 5 |
 | `H` | proposed | 3 |
 | `M` | killed | 4 |
 | `C` | done | 1 |
-| `C` | open | 1 |
+| `C` | held | 1 |
 | `G` | done | 1 |
 
 ## Hooks
@@ -79,14 +80,14 @@ Every open row in the register. Owner is the row's Owner column where the table 
 
 | Owner | ID | P | Status | Item |
 |---|---|---|---|---|
-| agent | C2 | P0 | open | Technical trial: visibility engine with redacted editing, screen-reader editing on Android and iOS, memory and page spee… |
+| agent | C2 | P0 | held | Technical trial: visibility engine with redacted editing, screen-reader editing on Android and iOS, memory and page spee… |
 | agent | RR2 | — | open | A standalone clone, and CI without UPSTREAMTOKEN, cannot run the status, citation, register and stamp checks because the… |
 | agent | RR3 | — | open | A gate said aloud and never written down, the upstream's signature failure |
 | agent | RR4 | — | open | Claims about outside systems ratified before anything ran: Discord guilds.join (FR6), Raid-Helper reads (FR42), Bun dial… |
 | agent | RR5 | — | open | A stamp or a count typed by hand instead of produced by the tool; the C1 review found every hand stamp an hour wrong |
 | owner | O1 | P1 | open | Register a Discord application in the Developer Portal (a web form, no code: name it, copy the client ID, secret and bot… |
 | owner | O2 | P1 | open | Android device with TalkBack and iOS device with VoiceOver for NFR5, needed at C2 |
-| owner | O3 | P1 | open | Choose and rent the 1 GB VPS for C2 |
+| owner | O3 | P1 | held | Choose and rent the 1 GB VPS for C2; only the final measurements need it, the rest of C2 can run in a 1 GB container loc… |
 | owner | O4 | P2 | open | Create martin-gleason/loomhall-themes when the first theme exists |
 | owner | O6 | P2 | open | Add a repository secret UPSTREAMTOKEN that can read martin-gleason/code-process-review, so CI runs the register checks; … |
 | owner | RR1 | — | open | The pure-Go SQLite driver or the Bun layer is too slow for a large guild |

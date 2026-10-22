@@ -1,6 +1,6 @@
 # Register — loomhall
 
-Created: 2026-10-22 11:15 -05:00 · Edited: 2026-10-22 14:41 -05:00
+Created: 2026-10-22 11:15 -05:00 · Edited: 2026-10-22 14:48 -05:00
 
 Every register for this project, one `##` per register. This is the
 "where are we" read.
@@ -50,7 +50,7 @@ Outstanding items only the owner can close.
 |---|---|---|---|
 | O1 | Register a Discord application in the Developer Portal (a web form, no code: name it, copy the client ID, secret and bot token into a file outside the tree) and pick a test server for the F2 `guilds.join` probe. Needed at the F2 gate, not before. The agent writes all the code and can walk the form with you. | P1 | open |
 | O2 | Android device with TalkBack and iOS device with VoiceOver for `NFR5`, needed at `C2` | P1 | open |
-| O3 | Choose and rent the 1 GB VPS for `C2` | P1 | open |
+| O3 | Choose and rent the 1 GB VPS for `C2`; only the final measurements need it, the rest of `C2` can run in a 1 GB container locally | P1 | held 2026-10-22 until funds allow |
 | O4 | Create `martin-gleason/loomhall-themes` when the first theme exists | P2 | open |
 | O5 | Write `internal/version/version.go` (`C1-T3`); its test is on disk and red | P1 | closed 2026-10-22, test green on the owner's third draft |
 | O6 | Add a repository secret `UPSTREAM_TOKEN` that can read `martin-gleason/code-process-review`, so CI runs the register checks; or make that repository public | P2 | open |
@@ -77,7 +77,7 @@ days on the owner's track.
 | ID | Chore | P | Status | Owner | Plan |
 |---|---|---|---|---|---|
 | C1 | Repository scaffold and harness | P0 | done, merged 2026-10-22 in PR #1 | agent | `docs/plans/C1.md` |
-| C2 | Technical trial: visibility engine with redacted editing, screen-reader editing on Android and iOS, memory and page speed on the `NFR1` server | P0 | open | agent | written at the gate |
+| C2 | Technical trial: visibility engine with redacted editing, screen-reader editing on Android and iOS, memory and page speed on the `NFR1` server | P0 | held 2026-10-22 by the owner ("hit pause until I have the funds to rent a vps"); resumes at a gate | agent | written at the gate |
 
 
 ## Gates (G)
