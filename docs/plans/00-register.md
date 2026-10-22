@@ -1,6 +1,6 @@
 # Register — loomhall
 
-Created: 2026-10-22 11:15 -05:00 · Edited: 2026-10-22 11:15 -05:00
+Created: 2026-10-22 11:15 -05:00 · Edited: 2026-10-22 11:13 -05:00
 
 Every register for this project, one `##` per register. This is the
 "where are we" read.
@@ -46,7 +46,7 @@ Outstanding items only the owner can close.
 
 | ID | Item | P | Status |
 |---|---|---|---|
-| O1 | Create a Discord test application and a test server for the F2 `guilds.join` probe, and point the agent at the credentials outside the tree | P1 | open |
+| O1 | Register a Discord application in the Developer Portal (a web form, no code: name it, copy the client ID, secret and bot token into a file outside the tree) and pick a test server for the F2 `guilds.join` probe. Needed at the F2 gate, not before. The agent writes all the code and can walk the form with you. | P1 | open |
 | O2 | Android device with TalkBack and iOS device with VoiceOver for `NFR5`, needed at `C2` | P1 | open |
 | O3 | Choose and rent the 1 GB VPS for `C2` | P1 | open |
 | O4 | Create `martin-gleason/loomhall-themes` when the first theme exists | P2 | open |

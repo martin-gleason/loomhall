@@ -83,7 +83,7 @@ Every open row in the register. Owner is the row's Owner column where the table 
 | agent | RR3 | — | open | A gate said aloud and never written down, the upstream's signature failure |
 | agent | RR4 | — | open | Claims about outside systems ratified before anything ran: Discord guilds.join (FR6), Raid-Helper reads (FR42), Bun dial… |
 | owner | D2 | — | proposed | The stack named in the spec's ## Stack is confirmed by a run. Bun over database/sql with the pure-Go SQLite driver and P… |
-| owner | O1 | P1 | open | Create a Discord test application and a test server for the F2 guilds.join probe, and point the agent at the credentials… |
+| owner | O1 | P1 | open | Register a Discord application in the Developer Portal (a web form, no code: name it, copy the client ID, secret and bot… |
 | owner | O2 | P1 | open | Android device with TalkBack and iOS device with VoiceOver for NFR5, needed at C2 |
 | owner | O3 | P1 | open | Choose and rent the 1 GB VPS for C2 |
 | owner | O4 | P2 | open | Create martin-gleason/loomhall-themes when the first theme exists |
