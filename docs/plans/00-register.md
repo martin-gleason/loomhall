@@ -1,6 +1,6 @@
 # Register — loomhall
 
-Created: 2026-10-22 11:15 -05:00 · Edited: 2026-10-22 14:35 -05:00
+Created: 2026-10-22 11:15 -05:00 · Edited: 2026-10-22 14:39 -05:00
 
 Every register for this project, one `##` per register. This is the
 "where are we" read.
@@ -102,7 +102,7 @@ label and **never appears in a commit, branch, or PR title**.
 | H1 | Status page regenerates clean | pre-commit; CI when `UPSTREAM_TOKEN` exists | the page cannot go stale | built, seen to fail (`M4`) |
 | H2 | No register ID in a commit subject; conventional format | commit-msg | the two-tier grammar | built, seen to fail (`M3`) |
 | H3 | Every staged file carries a current Created/Edited stamp | pre-commit | time spent, visible | built, seen to fail on an unstamped staged file, 2026-10-22 |
-| H4 | Test count may not fall below `tests/TEST_FLOOR` | pre-commit + CI | a shrinking suite is blind | built, seen to fail (`M2`) |
+| H4 | Test count may not fall below `tests/TEST_FLOOR` | pre-commit + CI | a shrinking suite is blind | built, seen to fail (`M2`); seen to fail in CI, run 39841621881 on 2026-10-22 |
 | H5 | Store suite runs against SQLite and Postgres (`FR67`) | CI | parity | built, observed: CI run 39814033849 on 2026-10-22, `floor pass — 16 tests passed` with the Postgres subtests |
 | H6 | Every `FR` is cited by a test; every test cites an `FR` or `D` | CI | drift, both directions | proposed, first feature |
 | H7 | No hard-coded user-facing string (`FR61`) | CI | the translation layer | proposed, `F15` |

@@ -25,7 +25,7 @@ Status is what the unit's own plan header declares. What has landed in git is de
 
 | ID | Kind | Status | Milestone | P | Owner | Plan | Tasks |
 |---|---|---|---|---|---|---|---|
-| C1 | chore | building, gate `G1` crossed 2026-10-22 | v1 | P0 | agent | `docs/plans/C1.md` | 8 planned |
+| C1 | chore | built 2026-10-22, PR #1 awaiting owner review and merge | v1 | P0 | agent | `docs/plans/C1.md` | 8 planned |
 
 ## Registers
 
