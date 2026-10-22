@@ -1,6 +1,6 @@
 # Register — loomhall
 
-Created: 2026-10-22 11:15 -05:00 · Edited: 2026-10-22 11:40 -05:00
+Created: 2026-10-22 11:15 -05:00 · Edited: 2026-10-22 14:35 -05:00
 
 Every register for this project, one `##` per register. This is the
 "where are we" read.
@@ -52,7 +52,7 @@ Outstanding items only the owner can close.
 | O2 | Android device with TalkBack and iOS device with VoiceOver for `NFR5`, needed at `C2` | P1 | open |
 | O3 | Choose and rent the 1 GB VPS for `C2` | P1 | open |
 | O4 | Create `martin-gleason/loomhall-themes` when the first theme exists | P2 | open |
-| O5 | Write `internal/version/version.go` (`C1-T3`); its test is on disk and red | P1 | open |
+| O5 | Write `internal/version/version.go` (`C1-T3`); its test is on disk and red | P1 | closed 2026-10-22, test green on the owner's third draft |
 | O6 | Add a repository secret `UPSTREAM_TOKEN` that can read `martin-gleason/code-process-review`, so CI runs the register checks; or make that repository public | P2 | open |
 
 
@@ -116,7 +116,7 @@ A test is not evidence until a mutation proves it can fail.
 
 | ID | File | Mutation | Caught by | Status |
 |---|---|---|---|---|
-| M1 | `internal/version/version.go` | `String()` returns an empty string | `internal/version` test | proposed, runs after `C1-T3` |
+| M1 | `internal/version/version.go` | `String()` returns an empty string | `internal/version` test | killed 2026-10-22: `go test ./internal/version/` exited 1 with the mutation in place |
 | M2 | `internal/id/id_test.go` | `TestNew_NeverRepeats` skipped, suite exits clean | `H4` floor | killed, re-earned 2026-10-22 by the baseline-proving runner at 12/13 |
 | M3 | commit subject | `fix(D1): …` | `H2` commit-msg | killed, re-earned 2026-10-22: clean subject accepted, `fix(D1)` refused |
 | M4 | `docs/plans/00-status.md` | edited by hand | `H1` | killed, re-earned 2026-10-22 by the baseline-proving runner |
