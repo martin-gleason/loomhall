@@ -1,4 +1,4 @@
-// Created: 2026-10-22 12:05 -05:00 · Edited: 2026-10-22 12:05 -05:00
+// Created: 2026-10-22 11:25 -05:00 · Edited: 2026-10-22 11:38 -05:00
 // Package id makes globally unique, time-ordered identifiers (NFR13).
 //
 // Why hand-rolled: a UUID version 7 is sixteen bytes, six of them the time, and the

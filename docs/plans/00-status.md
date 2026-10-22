@@ -17,7 +17,7 @@ Named, never numbered (`D2`). **No source read here marks a milestone as the cur
 
 | Milestone | Decisions landing here | Units |
 |---|---|---|
-| v1 | 3 | C1 |
+| v1 | 4 | C1 |
 
 ## Features and chores
 
@@ -33,8 +33,8 @@ Counted from the register itself. A register with no rows still gets a line.
 
 | Register | Rows | Open | Unknown | Closed |
 |---|---|---|---|---|
-| Decisions (`D`) | 3 | 1 | 0 | 2 |
-| Risks (`RR`) | 4 | 4 | 0 | 0 |
+| Decisions (`D`) | 4 | 2 | 0 | 2 |
+| Risks (`RR`) | 5 | 5 | 0 | 0 |
 | Owner items (`O`) | 6 | 6 | 0 | 0 |
 | Agent items (`A`) | 3 | 3 | 0 | 0 |
 | Hooks (`H`) | 8 | 3 | 0 | 5 |
@@ -46,9 +46,9 @@ Counted from the register itself. A register with no rows still gets a line.
 
 | Register | Status | Count |
 |---|---|---|
-| `D` | proposed | 1 |
+| `D` | proposed | 2 |
 | `D` | ratified | 2 |
-| `RR` | open | 4 |
+| `RR` | open | 5 |
 | `O` | open | 6 |
 | `A` | open | 3 |
 | `H` | built | 5 |
@@ -84,7 +84,9 @@ Every open row in the register. Owner is the row's Owner column where the table 
 | agent | RR2 | — | open | A standalone clone, and CI without UPSTREAMTOKEN, cannot run the status, citation, register and stamp checks because the… |
 | agent | RR3 | — | open | A gate said aloud and never written down, the upstream's signature failure |
 | agent | RR4 | — | open | Claims about outside systems ratified before anything ran: Discord guilds.join (FR6), Raid-Helper reads (FR42), Bun dial… |
+| agent | RR5 | — | open | A stamp or a count typed by hand instead of produced by the tool; the C1 review found every hand stamp an hour wrong |
 | owner | D2 | — | proposed | The stack named in the spec's ## Stack is confirmed by a run. Bun over database/sql with the pure-Go SQLite driver and P… |
+| owner | D4 | — | proposed | Register IDs may be cited in a commit body; the subject, the branch and the PR title are the constrained tier. The vendo… |
 | owner | O1 | P1 | open | Register a Discord application in the Developer Portal (a web form, no code: name it, copy the client ID, secret and bot… |
 | owner | O2 | P1 | open | Android device with TalkBack and iOS device with VoiceOver for NFR5, needed at C2 |
 | owner | O3 | P1 | open | Choose and rent the 1 GB VPS for C2 |
@@ -102,4 +104,4 @@ Every open row in the register. Owner is the row's Owner column where the table 
 
 ---
 
-20 open register rows.
+22 open register rows.

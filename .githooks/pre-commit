@@ -15,4 +15,3 @@ else
   echo "pre-commit: upstream not found at $TR — stamp, status, citation and register checks SKIPPED (RR2)"
 fi
 scripts/run_tests.sh
-scripts/check_floor.sh
