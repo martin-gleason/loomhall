@@ -1,0 +1,19 @@
+#!/bin/sh
+# Created: 2026-10-22 12:20 -05:00 · Edited: 2026-10-22 12:20 -05:00
+# commit-msg — the subject is <type>(<structural id>): <description>, and a register
+# ID (D, RR, O, A, H, M, G, FR, NFR) never appears in it. Cite those in the body.
+subject=$(head -n 1 "$1")
+case "$subject" in
+  fixup!*|squash!*) exit 0 ;;
+esac
+if ! printf '%s\n' "$subject" | grep -Eq '^(feat|fix|test|chore|docs|refactor|ci)\(([FC][0-9]+[a-z]?(-T[0-9]+)?)\): .+'; then
+  echo "commit-msg: subject must read <type>(<F or C id>): <description>"
+  echo "            got: $subject"
+  exit 1
+fi
+if printf '%s\n' "$subject" | grep -Eq '(^|[^A-Za-z0-9])(D|RR|O|A|H|M|G|FR|NFR)[0-9]+([^A-Za-z0-9]|$)'; then
+  echo "commit-msg: a register ID is in the subject; register IDs go in the body, never the subject"
+  echo "            got: $subject"
+  exit 1
+fi
+exit 0

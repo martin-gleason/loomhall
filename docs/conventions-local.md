@@ -1,6 +1,6 @@
 # Conventions — local to Loomhall
 
-Created: 2026-10-22 11:15 -05:00 · Edited: 2026-10-22 11:15 -05:00
+Created: 2026-10-22 11:15 -05:00 · Edited: 2026-10-22 11:23 -05:00
 
 Rules true of **this project only**. The vendored `docs/conventions.md` is never edited; anything specific to Loomhall belongs here.
 
@@ -39,4 +39,12 @@ Every PR body has four short sections: **What changed · Why the Go looks like t
 
 ## Harness
 
-Not yet declared. `C1` builds the five capabilities and declares them here as `run`, `count`, `floor`, `mutate`, `precommit`. Until then `check_harness.py` reports this project as undeclared, by name.
+The contract is `docs/conventions.md` § *Every project has a harness*. The stack is in the spec's `## Stack`; these are the commands, and they move freely.
+
+- run: `scripts/run_tests.sh`
+- count: `scripts/count_tests.sh`
+- floor: `tests/TEST_FLOOR`
+- mutate: `python3 tests/mutations.py`
+- precommit: `.githooks/pre-commit`
+
+`count` is a separate command from `run` on purpose: an exit code cannot show a suite that stopped running. The count is Go tests and subtests that passed plus vitest tests that passed; skipped tests are not counted, so the floor is set from a laptop without Postgres and CI, which has one, counts higher. Activate the hooks once per clone: `git config core.hooksPath .githooks`.
