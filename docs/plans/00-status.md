@@ -33,7 +33,7 @@ Counted from the register itself. A register with no rows still gets a line.
 
 | Register | Rows | Open | Unknown | Closed |
 |---|---|---|---|---|
-| Decisions (`D`) | 4 | 2 | 0 | 2 |
+| Decisions (`D`) | 4 | 0 | 0 | 4 |
 | Risks (`RR`) | 5 | 5 | 0 | 0 |
 | Owner items (`O`) | 6 | 5 | 0 | 1 |
 | Agent items (`A`) | 3 | 3 | 0 | 0 |
@@ -46,8 +46,7 @@ Counted from the register itself. A register with no rows still gets a line.
 
 | Register | Status | Count |
 |---|---|---|
-| `D` | proposed | 2 |
-| `D` | ratified | 2 |
+| `D` | ratified | 4 |
 | `RR` | open | 5 |
 | `O` | closed | 1 |
 | `O` | open | 5 |
@@ -85,8 +84,6 @@ Every open row in the register. Owner is the row's Owner column where the table 
 | agent | RR3 | — | open | A gate said aloud and never written down, the upstream's signature failure |
 | agent | RR4 | — | open | Claims about outside systems ratified before anything ran: Discord guilds.join (FR6), Raid-Helper reads (FR42), Bun dial… |
 | agent | RR5 | — | open | A stamp or a count typed by hand instead of produced by the tool; the C1 review found every hand stamp an hour wrong |
-| owner | D2 | — | proposed | The stack named in the spec's ## Stack is confirmed by a run. Bun over database/sql with the pure-Go SQLite driver and P… |
-| owner | D4 | — | proposed | Register IDs may be cited in a commit body; the subject, the branch and the PR title are the constrained tier. The vendo… |
 | owner | O1 | P1 | open | Register a Discord application in the Developer Portal (a web form, no code: name it, copy the client ID, secret and bot… |
 | owner | O2 | P1 | open | Android device with TalkBack and iOS device with VoiceOver for NFR5, needed at C2 |
 | owner | O3 | P1 | open | Choose and rent the 1 GB VPS for C2 |
@@ -102,4 +99,4 @@ Every open row in the register. Owner is the row's Owner column where the table 
 
 ---
 
-20 open register rows.
+18 open register rows.
