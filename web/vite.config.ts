@@ -1,9 +1,9 @@
-// Created: 2026-10-22 12:30 -05:00 · Edited: 2026-10-22 12:30 -05:00
+// Created: 2026-10-22 11:25 -05:00 · Edited: 2026-10-22 11:38 -05:00
 // The reference front end builds to static files that the Go binary embeds (FR2,
 // NFR14). adapter-static, never adapter-auto: there is no Node on a guild's server.
 import adapter from '@sveltejs/adapter-static';
 import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
 	plugins: [

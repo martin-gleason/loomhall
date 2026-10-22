@@ -1,6 +1,6 @@
 # Conventions — local to Loomhall
 
-Created: 2026-10-22 11:15 -05:00 · Edited: 2026-10-22 11:23 -05:00
+Created: 2026-10-22 11:15 -05:00 · Edited: 2026-10-22 11:38 -05:00
 
 Rules true of **this project only**. The vendored `docs/conventions.md` is never edited; anything specific to Loomhall belongs here.
 
@@ -14,7 +14,7 @@ The Turing process is cloned at `~/Local_Dev_Projects/turing-review`. Its script
     python3 $TR/scripts/gen_status.py .            # regenerate docs/plans/00-status.md
     python3 $TR/scripts/gen_status.py . --check    # H1
     python3 $TR/scripts/check_citations.py .       # every cited register ID has a row
-    python3 $TR/scripts/check_register.py .        # rows well formed
+    python3 $TR/scripts/check_register.py docs/plans/00-register.md   # rows well formed
     python3 $TR/scripts/stamp.py <file>            # Created/Edited stamp
     python3 $TR/scripts/check_harness.py --run .   # the five harness capabilities
 

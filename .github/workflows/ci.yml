@@ -1,4 +1,4 @@
-# Created: 2026-10-22 12:20 -05:00 · Edited: 2026-10-22 12:20 -05:00
+# Created: 2026-10-22 11:25 -05:00 · Edited: 2026-10-22 11:38 -05:00
 # ci — run, count against the floor, and the store suite on Postgres (H5). The
 # upstream register checks run only when UPSTREAM_TOKEN can read the private
 # turing-review repository; until then they live in the local pre-commit hook.
@@ -24,28 +24,26 @@ jobs:
       LOOMHALL_TEST_POSTGRES_DSN: postgres://loomhall:loomhall@localhost:5432/loomhall_test?sslmode=disable
       UPSTREAM_TOKEN: ${{ secrets.UPSTREAM_TOKEN }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           path: loomhall
-      - uses: actions/setup-go@v5
+      - uses: actions/setup-go@v6
         with:
           go-version-file: loomhall/go.mod
-      - uses: actions/setup-node@v4
+          cache-dependency-path: loomhall/go.sum
+      - uses: actions/setup-node@v5
         with:
           node-version: 24
           cache: npm
           cache-dependency-path: loomhall/web/package-lock.json
       - run: npm ci --no-fund --no-audit
         working-directory: loomhall/web
-      - name: run
+      - name: run (vet, svelte-check, tests, floor)
         run: scripts/run_tests.sh
-        working-directory: loomhall
-      - name: floor
-        run: scripts/check_floor.sh
         working-directory: loomhall
       - name: upstream checks
         if: env.UPSTREAM_TOKEN != ''
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: martin-gleason/code-process-review
           token: ${{ secrets.UPSTREAM_TOKEN }}

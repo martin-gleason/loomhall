@@ -1,4 +1,4 @@
-// Created: 2026-10-22 12:05 -05:00 · Edited: 2026-10-22 12:05 -05:00
+// Created: 2026-10-22 11:25 -05:00 · Edited: 2026-10-22 11:38 -05:00
 package store
 
 import (
@@ -48,7 +48,7 @@ func fresh(t *testing.T, b backend) *Store {
 	s := b.open(t)
 	t.Cleanup(func() { _ = s.Close() })
 	ctx := context.Background()
-	if err := s.Reset(ctx); err != nil {
+	if err := s.reset(ctx); err != nil {
 		t.Fatal(err)
 	}
 	if err := s.Migrate(ctx); err != nil {
@@ -102,6 +102,15 @@ func TestStore_MissingIsErrNoRows(t *testing.T) {
 				t.Fatalf("Get of a missing id: err = %v, want sql.ErrNoRows", err)
 			}
 		})
+	}
+}
+
+func TestOpenPostgres_BadDSNIsAnErrorNotAPanic(t *testing.T) {
+	for _, dsn := range []string{"localhost:5433/loomhall_test", "", "postgres://%zz"} {
+		s, err := OpenPostgres(dsn)
+		if err == nil || s != nil {
+			t.Fatalf("OpenPostgres(%q) = %v, %v; want nil store and an error", dsn, s, err)
+		}
 	}
 }
 

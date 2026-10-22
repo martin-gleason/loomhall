@@ -1,4 +1,4 @@
-// Created: 2026-10-22 12:05 -05:00 · Edited: 2026-10-22 12:05 -05:00
+// Created: 2026-10-22 11:25 -05:00 · Edited: 2026-10-22 11:38 -05:00
 // Package store is the only door to the database (FR67). Everything above it talks
 // to Store; nothing above it knows which SQL engine is behind it.
 //
@@ -9,6 +9,8 @@ package store
 import (
 	"context"
 	"database/sql"
+	"fmt"
+	"net/url"
 	"time"
 
 	"github.com/uptrace/bun"
@@ -47,8 +49,19 @@ func OpenSQLite(path string) (*Store, error) {
 	return &Store{db: bun.NewDB(sqldb, sqlitedialect.New())}, nil
 }
 
-// OpenPostgres connects with a postgres:// DSN.
-func OpenPostgres(dsn string) (*Store, error) {
+// OpenPostgres connects with a postgres:// DSN. A DSN this function cannot read is
+// returned as an error: the driver's own parser panics, and a typo in a guild's config
+// must not crash the server at startup.
+func OpenPostgres(dsn string) (s *Store, err error) {
+	u, perr := url.Parse(dsn)
+	if perr != nil || (u.Scheme != "postgres" && u.Scheme != "postgresql") {
+		return nil, fmt.Errorf("store: postgres DSN must start with postgres:// or postgresql://, got %q", dsn)
+	}
+	defer func() {
+		if r := recover(); r != nil {
+			s, err = nil, fmt.Errorf("store: cannot read postgres DSN: %v", r)
+		}
+	}()
 	sqldb := sql.OpenDB(pgdriver.NewConnector(pgdriver.WithDSN(dsn)))
 	return &Store{db: bun.NewDB(sqldb, pgdialect.New())}, nil
 }
@@ -76,8 +89,9 @@ func (s *Store) Get(ctx context.Context, id string) (*Record, error) {
 	return r, nil
 }
 
-// Reset drops the table. Tests use it so every run starts clean.
-func (s *Store) Reset(ctx context.Context) error {
+// reset drops the table so every test run starts clean. Unexported on purpose: the
+// only door to the database does not hand every caller a one-line table drop.
+func (s *Store) reset(ctx context.Context) error {
 	_, err := s.db.NewDropTable().Model((*Record)(nil)).IfExists().Exec(ctx)
 	return err
 }
