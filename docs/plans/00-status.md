@@ -35,10 +35,10 @@ Counted from the register itself. A register with no rows still gets a line.
 |---|---|---|---|---|
 | Decisions (`D`) | 4 | 2 | 0 | 2 |
 | Risks (`RR`) | 5 | 5 | 0 | 0 |
-| Owner items (`O`) | 6 | 6 | 0 | 0 |
+| Owner items (`O`) | 6 | 5 | 0 | 1 |
 | Agent items (`A`) | 3 | 3 | 0 | 0 |
 | Hooks (`H`) | 8 | 3 | 0 | 5 |
-| Mutations (`M`) | 4 | 1 | 0 | 3 |
+| Mutations (`M`) | 4 | 0 | 0 | 4 |
 | Chores (`C`) | 2 | 2 | 0 | 0 |
 | Gates (`G`) | 1 | 0 | 0 | 1 |
 
@@ -49,12 +49,12 @@ Counted from the register itself. A register with no rows still gets a line.
 | `D` | proposed | 2 |
 | `D` | ratified | 2 |
 | `RR` | open | 5 |
-| `O` | open | 6 |
+| `O` | closed | 1 |
+| `O` | open | 5 |
 | `A` | open | 3 |
 | `H` | built | 5 |
 | `H` | proposed | 3 |
-| `M` | killed | 3 |
-| `M` | proposed | 1 |
+| `M` | killed | 4 |
 | `C` | open | 2 |
 | `G` | done | 1 |
 
@@ -91,7 +91,6 @@ Every open row in the register. Owner is the row's Owner column where the table 
 | owner | O2 | P1 | open | Android device with TalkBack and iOS device with VoiceOver for NFR5, needed at C2 |
 | owner | O3 | P1 | open | Choose and rent the 1 GB VPS for C2 |
 | owner | O4 | P2 | open | Create martin-gleason/loomhall-themes when the first theme exists |
-| owner | O5 | P1 | open | Write internal/version/version.go (C1-T3); its test is on disk and red |
 | owner | O6 | P2 | open | Add a repository secret UPSTREAMTOKEN that can read martin-gleason/code-process-review, so CI runs the register checks; … |
 | owner | RR1 | — | open | The pure-Go SQLite driver or the Bun layer is too slow for a large guild |
 | unassigned | A1 | P2 | open | Upstream genstatus.py reads the vision from docs/specs/SPEC.md by name, while conventions.md says the directory is the r… |
@@ -100,8 +99,7 @@ Every open row in the register. Owner is the row's Owner column where the table 
 | unassigned | H6 | — | proposed | Every FR is cited by a test; every test cites an FR or D |
 | unassigned | H7 | — | proposed | No hard-coded user-facing string (FR61) |
 | unassigned | H8 | — | proposed | Dependency license scan (NFR10) |
-| unassigned | M1 | — | proposed | String() returns an empty string |
 
 ---
 
-22 open register rows.
+20 open register rows.
